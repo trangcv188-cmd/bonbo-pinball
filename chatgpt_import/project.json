@@ -1,0 +1,88 @@
+{
+  "imported_at": "2026-10-21T00:00:00+07:00",
+  "timezone": "Asia/Saigon",
+  "project": {
+    "id": "g-p-6acef38a88588191a627019322524f7d",
+    "name": "Pinball",
+    "instructions": "",
+    "memory": "default",
+    "library_access": true,
+    "sources": []
+  },
+  "conversations": [
+    {
+      "id": "6acef392-9de8-83ec-8324-61045aa9948e",
+      "title": "Báo cáo Facebook Pinball",
+      "created_at": "2026-10-14T10:14:27+07:00",
+      "status": "idle",
+      "messages": [
+        {
+          "turn_id": "0258fb86-3ae8-41c7-96d4-501330d40222",
+          "timestamp": "2026-10-20T18:45:46+07:00",
+          "user": "đừng có viết như vm, chin copy nó bị dấu sao",
+          "assistant_id": "6a8f3710-d434-4469-a073-257c3d51d882",
+          "assistant_status": "unavailable_in_source"
+        },
+        {
+          "turn_id": "ba18dfe5-fc0b-4c62-80b7-ceb19adbc6e7",
+          "timestamp": "2026-10-20T20:43:42+07:00",
+          "user": "đây là file quà tặng, e dịch ra tiếng việt, giảm độ nặng của file xuống còn 30%, e dịch ra tiếng việt, giá e thêm 40K cho 1 loại nếu mua tổng đơn dưới 10tr, nếu mua tổng đơn lớn hơn 10tr thì giá thêm 20k",
+          "assistant_id": "1a7dfc45-7efc-47fc-aa4e-709a96073d2e",
+          "assistant_status": "unavailable_in_source",
+          "attachments": [
+            "attachments/1、经营总表 (1).xlsx",
+            "attachments/image(20261020-134340).png"
+          ]
+        },
+        {
+          "turn_id": "4ec69989-bcb6-4faf-aba5-2d8ead3014f3",
+          "timestamp": "2026-10-20T20:53:56+07:00",
+          "user": "ủa là s, ví dụ như nến thơm là bán giá s",
+          "assistant_id": "1df4082f-62dc-41d7-883a-618c4b1fc321",
+          "assistant_status": "unavailable_in_source"
+        },
+        {
+          "turn_id": "e2cb3a87-def6-436e-84d7-ccc7652a7b51",
+          "timestamp": "2026-10-20T20:54:10+07:00",
+          "user": "giá vốn là s",
+          "assistant_id": "082ef4c8-9f9e-4fb0-bf23-0307e10b697b",
+          "assistant_status": "unavailable_in_source"
+        },
+        {
+          "turn_id": "b60c0a7c-3367-42d3-9969-7ec30da900d3",
+          "timestamp": "2026-10-20T20:55:17+07:00",
+          "user": "không, k hiểu. bây h chị muốn hỏi giá của nến thơm là 2,54 hay 4,24. hỏi bằng tiếng trung",
+          "assistant_id": "1fe8b45a-da74-472f-b264-4eedf34f44cc",
+          "assistant_status": "unavailable_in_source"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "attachments/1、经营总表 (1).xlsx",
+      "bytes": 64282342,
+      "sha256": "61B316B8F7A66D07AE2C578703F38FA743AF0926EE0DC5BFCB5A93BC3EF67748",
+      "source": "conversation_attachment"
+    },
+    {
+      "path": "attachments/image(20261020-134340).png",
+      "bytes": 91004,
+      "sha256": "7D97C987EE41631B4A19D3F568E67F9898EBFAB4FC8E66B8EC4F3BA717D3CC38",
+      "source": "conversation_attachment"
+    },
+    {
+      "path": "drafts/DS HÀNG.xlsx",
+      "bytes": 64272039,
+      "sha256": "919ACC59BC1C662AB7B2D5E1692C5ABB48A70E843B7E4BAD03BB7F4962E3D90A",
+      "source": "unsent_composer_attachment"
+    }
+  ],
+  "unsent_draft": {
+    "text": "giảm kích thước file này còn 24 MB",
+    "attachments": ["drafts/DS HÀNG.xlsx"]
+  },
+  "source_limitations": [
+    "All five assistant responses displayed 'Không thể tải phản hồi này' in ChatGPT at import time."
+  ]
+}

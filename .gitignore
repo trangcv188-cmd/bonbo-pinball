@@ -1,0 +1,8 @@
+# Archives
+*.tar.gz
+*.zip
+
+# System & temporary
+.DS_Store
+Thumbs.db
+*.tmp
