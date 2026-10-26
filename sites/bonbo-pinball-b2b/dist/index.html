@@ -91,15 +91,17 @@
 <body>
   <!-- Header / Nav -->
   <header class="site-header" id="top">
-    <div class="header-inner page-width">
+    <div class="header-inner">
       <a class="brand" href="#top" aria-label="MÁY BẮN BI PINBALL — Trang chủ">
-        <div class="brand-text">
-          <strong>MÁY BẮN BI PINBALL</strong>
-        </div>
+        <span class="brand-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+        </span>
+        <span class="brand-title">MÁY BẮN BI PINBALL</span>
       </a>
       
       <nav class="nav-links" id="primary-nav" aria-label="Điều hướng chính">
         <a href="#loi-ich">Lợi thế kinh tế</a>
+        <a href="#cach-choi">Cách chơi</a>
         <a href="#phan-khuc">Mô hình điểm đặt</a>
         <a href="#tinh-roi">Thời gian hoàn vốn</a>
         <a href="#thiet-bi">Thông số kỹ thuật</a>
@@ -110,13 +112,13 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-outline" href="assets/ho-so-thuyet-minh-bonbo-pinball.docx" download="Ho-so-thuyet-minh-may-ban-bi-pinball.docx">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <a class="btn btn-outline btn-sm" href="assets/ho-so-thuyet-minh-bonbo-pinball.docx" download="Ho-so-thuyet-minh-may-ban-bi-pinball.docx">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Tải đầy đủ hồ sơ</span>
         </a>
-        <a class="btn btn-primary" href="#tu-van">
+        <a class="btn btn-primary btn-sm" href="#tu-van">
           <span>Nhận tư vấn điểm đặt</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Mở menu">
           <span></span><span></span>
@@ -195,24 +197,24 @@
         <div class="hero-media-wrapper">
           <div class="machine-stage">
             <div class="machine-stage-header">
-              <div class="stage-tag"><span class="indicator-green"></span> THIẾT BỊ THỰC TẾ</div>
-              <span class="stage-serial font-mono">BONBO UNIT / REV 2.4</span>
+              <div class="stage-tag"><span class="indicator-green"></span> THIẾT BỊ & THƯƠNG HIỆU CHÍNH HÃNG</div>
+              <span class="stage-serial font-mono">BONBO PINBALL · VIỆT CORE</span>
             </div>
             
-            <div class="image-container">
-              <img src="assets/front.jpg" alt="Máy bắn bi đổi quà BONBO Pinball mặt trước với 9 ngăn quà và màn hình điều khiển" width="800" height="1066" class="machine-img" loading="eager">
+            <div class="image-container hero-featured-visual">
+              <img src="assets/hero-bonbo-pinball.jpg" alt="Mô hình Máy bắn bi Pinball đổi quà BONBO chính hãng 9 ngăn quà" width="1024" height="1024" class="machine-img-featured" loading="eager">
               
-              <!-- Hotspot 1: Ngăn quà -->
-              <div class="hotspot hotspot-gifts" style="top: 28%; left: 32%;">
-                <button type="button" class="hotspot-pin" aria-label="Xem chi tiết ngăn quà">1</button>
+              <!-- Hotspot 1: Ngăn quà (vị trí trên máy bên phải) -->
+              <div class="hotspot hotspot-gifts" style="top: 24%; left: 74%;">
+                <button type="button" class="hotspot-pin" aria-label="Xem chi tiết 9 ngăn quà">1</button>
                 <div class="hotspot-card">
                   <strong>09 Ngăn quà tự động</strong>
-                  <p>Mặt kính cường lực 8mm, khóa điện tử tự nhả khi người chơi đạt đủ điểm số.</p>
+                  <p>Mặt kính trong suốt, khóa điện từ tự động nhả quà khi người chơi đạt đủ điểm.</p>
                 </div>
               </div>
 
-              <!-- Hotspot 2: Bàn pinball -->
-              <div class="hotspot hotspot-playfield" style="top: 56%; left: 68%;">
+              <!-- Hotspot 2: Bàn pinball (vị trí bàn bắn bi) -->
+              <div class="hotspot hotspot-playfield" style="top: 55%; left: 66%;">
                 <button type="button" class="hotspot-pin" aria-label="Xem bàn bắn bi">2</button>
                 <div class="hotspot-card">
                   <strong>Bàn bắn bi cơ điện tử</strong>
@@ -220,19 +222,19 @@
                 </div>
               </div>
 
-              <!-- Hotspot 3: Thanh toán -->
-              <div class="hotspot hotspot-payment" style="top: 76%; left: 24%;">
-                <button type="button" class="hotspot-pin" aria-label="Xem cụm thanh toán">3</button>
+              <!-- Hotspot 3: Thanh toán (vị trí cụm QR) -->
+              <div class="hotspot hotspot-payment" style="top: 76%; left: 68%;">
+                <button type="button" class="hotspot-pin" aria-label="Xem cụm thanh toán VietQR">3</button>
                 <div class="hotspot-card">
                   <strong>Thanh toán kép VietQR + Tiền mặt</strong>
-                  <p>Quét mã VietQR qua 40+ app ngân hàng/ví điện tử, nhận tiền mặt tự động.</p>
+                  <p>Tự động 100%, khách quét mã VietQR chơi ngay sau 3 giây hoặc nạp tiền mặt.</p>
                 </div>
               </div>
             </div>
 
             <div class="machine-spec-pills">
               <span class="spec-pill">Kích thước: 510 × 778 × 1.700 mm</span>
-              <span class="spec-pill">Trọng lượng: ~60 kg</span>
+              <span class="spec-pill">Diện tích: 0,40 m²</span>
               <span class="spec-pill font-mono">Bảo hành 12 Tháng</span>
             </div>
           </div>
@@ -301,6 +303,95 @@
               <small>Sẵn sàng trình duyệt BQL TTTM</small>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CÁCH CHƠI & NGUYÊN LÝ HOẠT ĐỘNG -->
+    <section class="section-container bg-subtle" id="cach-choi">
+      <div class="page-width">
+        <div class="section-head">
+          <span class="section-kicker">TRẢI NGHIỆM KHÁCH HÀNG</span>
+          <h2 class="section-title">Cách chơi đơn giản — Tự phục vụ 100%</h2>
+          <p class="section-subtitle">Chỉ với 5 bước trực quan, khách hàng tự thao tác thanh toán, chơi bắn bi và nhận quà mà không cần nhân viên hỗ trợ.</p>
+        </div>
+
+        <div class="gameplay-grid">
+          <!-- Step 1 -->
+          <div class="gameplay-step-card">
+            <div class="step-num font-mono">01</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"/></svg>
+            </div>
+            <h3>Nạp tiền / Quét VietQR</h3>
+            <p>Khách hàng quét mã VietQR động qua app ngân hàng hoặc nạp tiền mặt trực tiếp vào khe nhận tiền của máy.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="gameplay-step-card">
+            <div class="step-num font-mono">02</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+            </div>
+            <h3>Chọn điểm chơi</h3>
+            <p>Nhấn nút chọn mức điểm hoặc số lượt chơi mong muốn theo cấu hình cài đặt linh hoạt của chủ điểm đặt.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="gameplay-step-card">
+            <div class="step-num font-mono">03</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <h3>Kéo cần bắn bi</h3>
+            <p>Nhấn nút "Bắt đầu" và kéo cần trợ lực mạ crom để bắn các viên bi sắt vào bàn chốt tính điểm.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="gameplay-step-card">
+            <div class="step-num font-mono">04</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3>Tích lũy điểm thưởng</h3>
+            <p>Cảm biến ghi nhận vị trí rơi, nhân hệ số may mắn (2x, 4x, 6x, 8x, 10x) và tổng hợp điểm lên bảng LED.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="gameplay-step-card highlight">
+            <div class="step-num font-mono">05</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg>
+            </div>
+            <h3>Chọn & Nhận quà tự động</h3>
+            <p>Đủ điểm thưởng, người chơi bấm nút chọn ngăn quà tương ứng; khóa điện từ tự mở để lấy quà ngay.</p>
+          </div>
+        </div>
+
+        <!-- Gameplay Visual Banner -->
+        <div class="gameplay-visual-banner">
+          <div class="gameplay-banner-img">
+            <img src="assets/real-playfield.jpg" alt="Mặt bàn bắn bi và nút điều khiển trực tiếp" loading="lazy">
+          </div>
+          <div class="gameplay-banner-content">
+            <div class="kicker-pill"><span class="pulse-dot"></span> THAO TÁC CƠ HỌC GÂY HƯNG PHẤN</div>
+            <h3>Sức hút từ âm thanh, ánh sáng và phần thưởng hiện vật cầm tay</h3>
+            <p>Khác với game điện thoại ảo, cảm giác kéo cần nảy lò xo, tiếng bi va chạm chốt thép và khoảnh khắc cánh tủ quà tự bung mở tạo cảm giác chiến thắng thật 100%, thúc đẩy khách chơi tiếp tục nạp tiền chơi lại nhiều lần.</p>
+            <div class="banner-features">
+              <div class="bf-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Học luật chơi trong 10 giây</span>
+              </div>
+              <div class="bf-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Tỷ lệ chơi lại (replay) cao</span>
+              </div>
+              <div class="bf-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Không cần người trông coi đổi quà</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1196,9 +1287,10 @@
     <div class="page-width footer-grid">
       <div class="footer-col-main">
         <a class="brand brand-light" href="#top">
-          <div class="brand-text">
-            <strong>MÁY BẮN BI PINBALL</strong>
-          </div>
+          <span class="brand-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+          </span>
+          <span class="brand-title" style="color: #FFFFFF;">MÁY BẮN BI PINBALL</span>
         </a>
         <p class="footer-company-name">CÔNG TY TNHH CÔNG NGHỆ VIỆT CORE VIỆT NAM</p>
         <p class="footer-address">
