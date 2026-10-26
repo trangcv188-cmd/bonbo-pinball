@@ -377,7 +377,134 @@ button, input, select, textarea {
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Interactive Investment Reasons (Tại sao bạn nên đầu tư?) */
+.invest-reasons-block {
   margin-bottom: 32px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.invest-reasons-header {
+  margin-bottom: 14px;
+}
+
+.invest-kicker {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: #DC2626; /* Vibrant red as in user's design */
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.reason-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.reason-tab-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 10px 8px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.reason-tab-btn:hover {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+  background-color: var(--brand-blue-light);
+}
+
+.reason-tab-btn.active {
+  background-color: var(--text-main);
+  color: #FFFFFF;
+  border-color: var(--text-main);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+}
+
+.reason-tab-btn.active svg {
+  stroke: #60A5FA;
+}
+
+.reason-panels-wrapper {
+  background: #F8FAFC;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+}
+
+.reason-panel {
+  display: none;
+  width: 100%;
+}
+
+.reason-panel.active {
+  display: block;
+  animation: reasonFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes reasonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reason-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.reason-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.reason-bullet-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.reason-bullet-list li {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.reason-bullet-list li:last-child {
+  margin-bottom: 0;
 }
 
 .hero-metrics-strip {
@@ -2326,6 +2453,10 @@ textarea:focus {
   }
 
   .hero-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reason-tabs {
     grid-template-columns: repeat(2, 1fr);
   }
 

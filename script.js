@@ -1,4 +1,4 @@
-/**
+﻿/**
  * BONBO PINBALL B2B — CLIENT INTERACTIVITY & CALCULATION ENGINE
  * Framework-free, zero-dependency, high-speed execution
  */
@@ -293,6 +293,36 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
       menuToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // =========================================================================
+  // 8. INVESTMENT REASONS TABS (HERO SECTION)
+  // =========================================================================
+  const reasonTabs = document.querySelectorAll('.reason-tab-btn');
+  const reasonPanels = document.querySelectorAll('.reason-panel');
+
+  reasonTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.target;
+
+      reasonTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      reasonPanels.forEach(p => {
+        p.classList.remove('active');
+        p.hidden = true;
+      });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        targetPanel.hidden = false;
+      }
     });
   });
 });

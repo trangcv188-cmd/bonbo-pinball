@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8">
@@ -142,37 +142,89 @@
     <section class="hero-section">
       <div class="page-width hero-grid">
         <div class="hero-content">
-          <div class="kicker-pill">
+                    <div class="kicker-pill">
             <span class="pulse-dot"></span>
-            <span>GIẢI PHÁP VẬN HÀNH THƯƠNG MẠI · VIỆT CORE</span>
+            <span>Máy Bắn Bi Pinball</span>
           </div>
           
           <h1 class="hero-title">
-            Lợi nhuận tự động,<br>
-            <span class="text-accent">tối ưu chi phí</span>
+            ĐẦU TƯ SINH LỜI<br>
+            <span class="text-accent">LỢI NHUẬN THỤ ĐỘNG</span>
           </h1>
           
           <p class="hero-desc">
-            <strong>BONBO Pinball</strong> là thiết bị giải trí đổi quà tự phục vụ dành riêng cho Trung tâm thương mại, Khu vui chơi, Chuỗi F&B và Rạp chiếu phim. Tự thanh toán VietQR & tiền mặt, tự cấp quà chính hãng, kiểm soát doanh thu thời gian thực từ xa qua điện thoại.
+            <strong>Máy Bắn Bi Pinball</strong> là loại máy chơi game dùng viên bi nảy qua các chốt kim loại bên trong tủ kính, khi bi rơi vào vào những ô có sáng đèn thì người chơi sẽ được cộng điểm. Hệ thống tự động tính điểm và tự động đổi quà.
           </p>
 
-          <!-- Key Metrics -->
-          <div class="hero-metrics-strip">
-            <div class="metric-card">
-              <span class="metric-value font-mono">0,4 m²</span>
-              <span class="metric-label">Diện tích sàn tối thiểu</span>
+          <!-- Interactive Investment Reasons (Tại sao bạn nên đầu tư?) -->
+          <div class="invest-reasons-block">
+            <div class="invest-reasons-header">
+              <span class="invest-kicker">Tại sao bạn nên đầu tư?</span>
             </div>
-            <div class="metric-card">
-              <span class="metric-value font-mono">100–120 W</span>
-              <span class="metric-label">Công suất điện (1 bóng đèn)</span>
+
+            <!-- 4 Tab Buttons -->
+            <div class="reason-tabs" role="tablist" aria-label="Lý do nên đầu tư máy bắn bi">
+              <button class="reason-tab-btn active" role="tab" aria-selected="true" data-target="reason-loi-nhuan">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Lợi nhuận cao</span>
+              </button>
+              <button class="reason-tab-btn" role="tab" aria-selected="false" data-target="reason-rui-ro">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Rủi ro thấp</span>
+              </button>
+              <button class="reason-tab-btn" role="tab" aria-selected="false" data-target="reason-dien-tich">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>Tận dụng diện tích trống</span>
+              </button>
+              <button class="reason-tab-btn" role="tab" aria-selected="false" data-target="reason-thu-hut">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Thu hút khách</span>
+              </button>
             </div>
-            <div class="metric-card">
-              <span class="metric-value font-mono">20 Tr</span>
-              <span class="metric-label">Giá máy mua đứt (18tr sỉ)</span>
-            </div>
-            <div class="metric-card highlight-metric">
-              <span class="metric-value font-mono text-emerald">0 ĐỒNG</span>
-              <span class="metric-label">Lựa chọn hợp tác chia sẻ %</span>
+
+            <!-- Content Panels -->
+            <div class="reason-panels-wrapper">
+              <!-- Panel 1: Lợi nhuận cao -->
+              <div class="reason-panel active" id="reason-loi-nhuan" role="tabpanel">
+                <div class="reason-card">
+                  <h4 class="reason-title">Lợi nhuận cao:</h4>
+                  <p class="reason-text">Biên lợi nhuận cao với chi phí mua quà thưởng thấp (chỉ bằng <strong>1/3 đến 1/5</strong> giá trị tiền nạp để trúng thưởng).</p>
+                </div>
+              </div>
+
+              <!-- Panel 2: Rủi ro thấp -->
+              <div class="reason-panel" id="reason-rui-ro" role="tabpanel" hidden>
+                <div class="reason-card">
+                  <h4 class="reason-title">Rủi ro thấp:</h4>
+                  <ul class="reason-bullet-list">
+                    <li><strong>Thu hồi vốn nhanh:</strong> Chỉ từ <strong>3 đến 6 tháng</strong> tùy thuộc vào vị trí đặt máy.</li>
+                    <li><strong>Dòng tiền mặt ngay lập tức:</strong> Người chơi phải nạp xu hoặc quét mã QR trả tiền trước, giúp chủ máy không bao giờ lo nợ xấu.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Panel 3: Tận dụng diện tích trống -->
+              <div class="reason-panel" id="reason-dien-tich" role="tabpanel" hidden>
+                <div class="reason-card">
+                  <h4 class="reason-title">Tận dụng diện tích trống:</h4>
+                  <ul class="reason-bullet-list">
+                    <li>Thay vì để không gian trống, máy chỉ cần diện tích là <strong>1m²</strong> để tạo ra doanh thu thụ động.</li>
+                    <li>Dễ dàng đặt những chỗ trống, dễ nhìn thấy.</li>
+                    <li>Không cần người trông coi, không lo vướng lối đi.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Panel 4: Thu hút khách -->
+              <div class="reason-panel" id="reason-thu-hut" role="tabpanel" hidden>
+                <div class="reason-card">
+                  <h4 class="reason-title">Thu hút khách:</h4>
+                  <ul class="reason-bullet-list">
+                    <li>Luôn có đèn LED rực rỡ, âm thanh vui nhộn và bên trong chứa đầy quà bắt mắt.</li>
+                    <li>Dù đặt ở góc nào, máy cũng tự thu hút ánh nhìn của mọi người khi đi ngang qua.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
