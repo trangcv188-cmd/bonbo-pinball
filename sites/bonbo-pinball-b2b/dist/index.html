@@ -253,34 +253,75 @@
               <span class="stage-serial font-mono">BONBO PINBALL · VIỆT CORE</span>
             </div>
             
-            <div class="image-container hero-featured-visual">
-              <img src="assets/hero-bonbo-pinball.jpg" alt="Mô hình Máy bắn bi Pinball đổi quà BONBO chính hãng 9 ngăn quà" width="1024" height="1024" class="machine-img-featured" loading="eager">
-              
-              <!-- Hotspot 1: Ngăn quà (vị trí trên máy bên phải) -->
-              <div class="hotspot hotspot-gifts" style="top: 24%; left: 74%;">
-                <button type="button" class="hotspot-pin" aria-label="Xem chi tiết 9 ngăn quà">1</button>
-                <div class="hotspot-card">
-                  <strong>09 Ngăn quà tự động</strong>
-                  <p>Mặt kính trong suốt, khóa điện từ tự động nhả quà khi người chơi đạt đủ điểm.</p>
+                        <!-- Hero Auto-Slider (4 Images, 2s Interval) -->
+            <div class="hero-slider-container" id="hero-slider">
+              <div class="hero-slides-wrapper">
+                <!-- Slide 1: 3D Model with Hotspots -->
+                <div class="hero-slide active">
+                  <img src="assets/hero-bonbo-pinball.jpg" alt="Mô hình Máy bắn bi Pinball đổi quà BONBO chính hãng 9 ngăn quà" width="1024" height="1024" class="hero-slide-img" loading="eager">
+                  <span class="hero-slide-tag">01 / Mô hình 3D chính hãng</span>
+                  
+                  <!-- Hotspot 1: Ngăn quà -->
+                  <div class="hotspot hotspot-gifts" style="top: 24%; left: 74%;">
+                    <button type="button" class="hotspot-pin" aria-label="Xem chi tiết 9 ngăn quà">1</button>
+                    <div class="hotspot-card">
+                      <strong>09 Ngăn quà tự động</strong>
+                      <p>Mặt kính trong suốt, khóa điện từ tự động nhả quà khi người chơi đạt đủ điểm.</p>
+                    </div>
+                  </div>
+
+                  <!-- Hotspot 2: Bàn pinball -->
+                  <div class="hotspot hotspot-playfield" style="top: 55%; left: 66%;">
+                    <button type="button" class="hotspot-pin" aria-label="Xem bàn bắn bi">2</button>
+                    <div class="hotspot-card">
+                      <strong>Bàn bắn bi cơ điện tử</strong>
+                      <p>Cảm biến quang học chính xác, LED RGB chạy hiệu ứng hấp dẫn người qua lại.</p>
+                    </div>
+                  </div>
+
+                  <!-- Hotspot 3: Thanh toán -->
+                  <div class="hotspot hotspot-payment" style="top: 76%; left: 68%;">
+                    <button type="button" class="hotspot-pin" aria-label="Xem cụm thanh toán VietQR">3</button>
+                    <div class="hotspot-card">
+                      <strong>Thanh toán kép VietQR + Tiền mặt</strong>
+                      <p>Tự động 100%, khách quét mã VietQR chơi ngay sau 3 giây hoặc nạp tiền mặt.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Two Real Machines -->
+                <div class="hero-slide">
+                  <img src="assets/hero-slide-two-machines.jpg" alt="Hai máy Pinball thực tế với 9 ngăn quà và đèn LED" width="1024" height="1024" class="hero-slide-img" loading="lazy">
+                  <span class="hero-slide-tag">02 / Máy thực tế & 9 ngăn tủ quà</span>
+                </div>
+
+                <!-- Slide 3: Playfield & QR -->
+                <div class="hero-slide">
+                  <img src="assets/hero-slide-playfield.jpg" alt="Mặt bàn bắn bi và cụm điều khiển tích hợp VietQR" width="1024" height="1024" class="hero-slide-img" loading="lazy">
+                  <span class="hero-slide-tag">03 / Bàn bắn bi & Quét mã VietQR</span>
+                </div>
+
+                <!-- Slide 4: Plunger & Button -->
+                <div class="hero-slide">
+                  <img src="assets/hero-slide-plunger.jpg" alt="Cần bắn bi trợ lực mạ crom và nút bấm điều khiển" width="1024" height="1024" class="hero-slide-img" loading="lazy">
+                  <span class="hero-slide-tag">04 / Cần bắn bi trợ lực mạ crom</span>
                 </div>
               </div>
 
-              <!-- Hotspot 2: Bàn pinball (vị trí bàn bắn bi) -->
-              <div class="hotspot hotspot-playfield" style="top: 55%; left: 66%;">
-                <button type="button" class="hotspot-pin" aria-label="Xem bàn bắn bi">2</button>
-                <div class="hotspot-card">
-                  <strong>Bàn bắn bi cơ điện tử</strong>
-                  <p>Cảm biến quang học chính xác, LED RGB chạy hiệu ứng hấp dẫn người qua lại.</p>
-                </div>
-              </div>
+              <!-- Slider Navigation Buttons -->
+              <button class="hero-slider-prev" type="button" aria-label="Hình trước">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="hero-slider-next" type="button" aria-label="Hình kế tiếp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
 
-              <!-- Hotspot 3: Thanh toán (vị trí cụm QR) -->
-              <div class="hotspot hotspot-payment" style="top: 76%; left: 68%;">
-                <button type="button" class="hotspot-pin" aria-label="Xem cụm thanh toán VietQR">3</button>
-                <div class="hotspot-card">
-                  <strong>Thanh toán kép VietQR + Tiền mặt</strong>
-                  <p>Tự động 100%, khách quét mã VietQR chơi ngay sau 3 giây hoặc nạp tiền mặt.</p>
-                </div>
+              <!-- Slider Dots (4 Dots) -->
+              <div class="hero-slider-dots">
+                <button class="hero-dot active" type="button" data-slide="0" aria-label="Xem hình 1" aria-selected="true"></button>
+                <button class="hero-dot" type="button" data-slide="1" aria-label="Xem hình 2" aria-selected="false"></button>
+                <button class="hero-dot" type="button" data-slide="2" aria-label="Xem hình 3" aria-selected="false"></button>
+                <button class="hero-dot" type="button" data-slide="3" aria-label="Xem hình 4" aria-selected="false"></button>
               </div>
             </div>
 
