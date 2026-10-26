@@ -228,8 +228,8 @@ button, input, select, textarea {
 }
 
 .brand-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   background: linear-gradient(135deg, #2563EB, #1D4ED8);
   color: #FFFFFF;
   border-radius: var(--radius-sm);
@@ -238,6 +238,16 @@ button, input, select, textarea {
   justify-content: center;
   box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
   flex-shrink: 0;
+}
+
+.brand-logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  display: block;
 }
 
 .brand-title {
