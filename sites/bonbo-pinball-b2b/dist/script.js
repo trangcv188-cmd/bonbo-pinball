@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = heroSlider.querySelector('.hero-slider-next');
     let currentSlide = 0;
     let slideTimer = null;
-    const INTERVAL_MS = 2000; // 2 seconds
+    const INTERVAL_MS = 3000; // 3 seconds
 
     function showSlide(index) {
       if (index < 0) {
