@@ -1,4 +1,4 @@
-﻿/**
+/**
  * BONBO PINBALL B2B — CLIENT INTERACTIVITY & CALCULATION ENGINE
  * Framework-free, zero-dependency, high-speed execution
  */
@@ -577,5 +577,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     startDeployAutoPlay();
+  }
+
+  // =========================================================================
+  // 6. REAL SOFTWARE SHOWCASE (TABS & LAPTOP SCREEN SWITCHER)
+  // =========================================================================
+  const softwareTabBtns = document.querySelectorAll('.software-tab-btn');
+  const softwarePanels = document.querySelectorAll('.software-panel');
+  const laptopNavItems = document.querySelectorAll('.screen-nav-item');
+  const laptopSlides = document.querySelectorAll('.laptop-slide');
+
+  // Tab switching (Laptop vs Mobile)
+  if (softwareTabBtns.length) {
+    softwareTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+
+        softwareTabBtns.forEach(b => {
+          const isActive = (b === btn);
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        softwarePanels.forEach(panel => {
+          if (panel.id === `panel-${targetTab}`) {
+            panel.classList.add('active');
+            panel.removeAttribute('hidden');
+          } else {
+            panel.classList.remove('active');
+            panel.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  }
+
+  // Laptop Screen Switcher (Screen 1, Screen 2, Screen 3)
+  if (laptopNavItems.length && laptopSlides.length) {
+    laptopNavItems.forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        laptopNavItems.forEach((nav, i) => {
+          nav.classList.toggle('active', i === idx);
+        });
+        laptopSlides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === idx);
+        });
+      });
+    });
   }
 });

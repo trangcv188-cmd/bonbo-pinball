@@ -945,124 +945,122 @@
       </div>
     </section>
 
-    <!-- SECTION 5: MÔ PHỎNG DASHBOARD QUẢN LÝ CLOUD -->
+    <!-- SECTION 5: HÌNH ẢNH THỰC TẾ PHẦN MỀM VẬN HÀNH (LAPTOP & ĐIỆN THOẠI) -->
     <section class="section-container" id="cloud-dashboard">
       <div class="page-width">
         <div class="section-head">
-          <span class="section-kicker">CÔNG NGHỆ VẬN HÀNH IOT</span>
-          <h2 class="section-title">Kiểm soát toàn bộ chuỗi máy trên một màn hình</h2>
-          <p class="section-subtitle">Chủ máy không cần có mặt tại điểm đặt. Dữ liệu doanh thu, số lượt chơi và tồn kho quà được đồng bộ tức thì lên điện thoại.</p>
+          <span class="section-kicker kicker-xl">HỆ THỐNG PHẦN MỀM VẬN HÀNH THỰC TẾ</span>
+          <h2 class="section-title">Giao diện phần mềm quản lý thực tế</h2>
+          <p class="section-subtitle">Chủ máy dễ dàng theo dõi dòng tiền, kiểm soát lượt chơi và quản lý từ xa mọi lúc mọi nơi trên cả máy tính (Laptop) và điện thoại di động.</p>
         </div>
 
-        <div class="dashboard-mockup">
-          <div class="dash-chrome">
-            <div class="dash-dots"><span></span><span></span><span></span></div>
-            <div class="dash-titlebar font-mono">bonbo-control.vietcore.vn — HỆ THỐNG GIÁM SÁT ĐIỂM ĐẶT TRỰC TUYẾN</div>
-            <div class="dash-live-badge"><span class="indicator-green"></span> 04 MÁY TRỰC TUYẾN</div>
-          </div>
+        <!-- Device Selector Tabs -->
+        <div class="software-tabs-bar" role="tablist" aria-label="Chọn thiết bị xem phần mềm">
+          <button type="button" class="software-tab-btn active" data-tab="laptop" role="tab" aria-selected="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            <span>Quản lý trên Laptop / Máy tính (3 màn hình)</span>
+          </button>
+          <button type="button" class="software-tab-btn" data-tab="mobile" role="tab" aria-selected="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Quản lý trên Điện thoại (2 màn hình)</span>
+          </button>
+        </div>
 
-          <div class="dash-container">
-            <!-- Dash Sidebar -->
-            <div class="dash-sidebar">
-              <div class="dash-user">
-                <span class="dash-avatar">VC</span>
-                <div>
-                  <strong>Việt Core Admin</strong>
-                  <small>Đối tác thương mại</small>
+        <!-- TAB 1: LAPTOP VIEW (3 MÀN HÌNH) -->
+        <div class="software-panel active" id="panel-laptop" role="tabpanel">
+          <div class="laptop-viewer-layout">
+            <!-- Screen Selectors & Feature Cards -->
+            <div class="laptop-screen-nav">
+              <div class="screen-nav-item active" data-laptop-idx="0">
+                <div class="screen-nav-num">01</div>
+                <div class="screen-nav-content">
+                  <h4>Tổng quan doanh thu hôm nay</h4>
+                  <p>Thống kê tiền mặt, trực tuyến và xu theo thời gian thực. Lọc linh hoạt theo hôm nay, hôm qua, 7 ngày, tháng này.</p>
                 </div>
               </div>
-              <nav class="dash-nav">
-                <a href="#cloud-dashboard" class="dash-link active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Tổng quan</a>
-                <a href="#cloud-dashboard" class="dash-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Danh sách máy</a>
-                <a href="#cloud-dashboard" class="dash-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Kho quà tặng</a>
-                <a href="#cloud-dashboard" class="dash-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Báo cáo tài chính</a>
-              </nav>
+
+              <div class="screen-nav-item" data-laptop-idx="1">
+                <div class="screen-nav-num">02</div>
+                <div class="screen-nav-content">
+                  <h4>Quản lý danh sách thiết bị</h4>
+                  <p>Giám sát trạng thái hoạt động online (chấm xanh), doanh thu chi tiết từng máy và từng điểm đặt.</p>
+                </div>
+              </div>
+
+              <div class="screen-nav-item" data-laptop-idx="2">
+                <div class="screen-nav-num">03</div>
+                <div class="screen-nav-content">
+                  <h4>Vận hành, Tồn kho & Đối soát</h4>
+                  <p>Kiểm soát tồn quà từng ngăn, quét đổi phiếu quà tặng và quản lý tài khoản ngân hàng nhận tiền tự động.</p>
+                </div>
+              </div>
             </div>
 
-            <!-- Dash Main Content -->
-            <div class="dash-viewport">
-              <div class="dash-kpi-grid">
-                <div class="dash-kpi">
-                  <span class="kpi-title">DOANH THU THỰC TẾ HÔM NAY</span>
-                  <strong class="kpi-number font-mono text-emerald">6.280.000 đ</strong>
-                  <small class="kpi-trend text-emerald">↑ +14.2% so với hôm qua</small>
+            <!-- Laptop Device Mockup Frame -->
+            <div class="laptop-frame-wrapper">
+              <div class="laptop-mockup-frame">
+                <!-- Browser Chrome Header -->
+                <div class="laptop-chrome">
+                  <div class="chrome-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="chrome-address-bar font-mono">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span>coupon.bumbum.cloud/m/</span>
+                  </div>
+                  <div class="chrome-badge"><span class="pulse-dot"></span> Trực tuyến</div>
                 </div>
-                <div class="dash-kpi">
-                  <span class="kpi-title">TỔNG LƯỢT CHƠI HÔM NAY</span>
-                  <strong class="kpi-number font-mono">314 lượt</strong>
-                  <small>Trung bình 78 lượt/máy</small>
-                </div>
-                <div class="dash-kpi">
-                  <span class="kpi-title">TỶ LỆ THANH TOÁN VIETQR</span>
-                  <strong class="kpi-number font-mono">72,6%</strong>
-                  <small>228 lượt QR / 86 lượt tiền mặt</small>
-                </div>
-                <div class="dash-kpi">
-                  <span class="kpi-title">QUÀ XUẤT TRONG NGÀY</span>
-                  <strong class="kpi-number font-mono">24 phần</strong>
-                  <small class="kpi-warning text-amber">01 máy cần bổ sung quà</small>
+
+                <!-- Screen Images Stack -->
+                <div class="laptop-screen-viewport">
+                  <div class="laptop-slide active" data-laptop-slide="0">
+                    <img src="assets/software-laptop-dashboard.png" alt="Giao diện phần mềm quản lý trên laptop - Thống kê doanh thu hôm nay" loading="lazy">
+                    <div class="screen-badge-float">Màn hình 1: Tổng doanh thu & Dòng tiền thực tế</div>
+                  </div>
+                  <div class="laptop-slide" data-laptop-slide="1">
+                    <img src="assets/software-laptop-devices.png" alt="Giao diện phần mềm quản lý trên laptop - Giám sát thiết bị trực tuyến" loading="lazy">
+                    <div class="screen-badge-float">Màn hình 2: Trạng thái & Doanh thu từng máy</div>
+                  </div>
+                  <div class="laptop-slide" data-laptop-slide="2">
+                    <img src="assets/software-laptop-operations.png" alt="Giao diện phần mềm quản lý trên laptop - Menu vận hành và kho quà" loading="lazy">
+                    <div class="screen-badge-float">Màn hình 3: Menu vận hành, Tồn kho quà & Đối soát</div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <!-- Live Machine Table in Simulator -->
-              <div class="dash-table-wrap">
-                <div class="dash-table-header">
-                  <strong>Trạng thái hoạt động theo từng điểm đặt (Live Telemetry)</strong>
-                  <button type="button" class="btn btn-xs btn-outline" id="btn-refresh-dash">Làm mới dữ liệu</button>
+        <!-- TAB 2: MOBILE VIEW (2 MÀN HÌNH) -->
+        <div class="software-panel" id="panel-mobile" role="tabpanel" hidden>
+          <div class="mobile-viewer-layout">
+            <!-- Mobile Screen 1: Thống kê doanh thu -->
+            <div class="mobile-card-item">
+              <div class="mobile-phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <img src="assets/software-mobile-revenue.png" alt="Giao diện quản lý doanh thu trên điện thoại di động" loading="lazy">
                 </div>
-                <table class="dash-table">
-                  <thead>
-                    <tr>
-                      <th>Điểm đặt / Tên máy</th>
-                      <th>Địa chỉ</th>
-                      <th>Hôm nay</th>
-                      <th>Tồn kho quà</th>
-                      <th>Trạng thái</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>BONBO #01</strong> · Vincom Gò Vấp</td>
-                      <td>12 Phan Văn Trị, Gò Vấp</td>
-                      <td class="font-mono text-emerald">1.840.000 đ (92 lượt)</td>
-                      <td>
-                        <div class="progress-bar-wrap"><div class="progress-bar bg-emerald" style="width: 82%;"></div></div>
-                        <small class="font-mono">82% (Còn 29/36)</small>
-                      </td>
-                      <td><span class="badge-status status-online">● Đang hoạt động</span></td>
-                    </tr>
-                    <tr>
-                      <td><strong>BONBO #02</strong> · Vạn Hạnh Mall Q.10</td>
-                      <td>11 Sư Vạn Hạnh, Quận 10</td>
-                      <td class="font-mono text-emerald">2.160.000 đ (108 lượt)</td>
-                      <td>
-                        <div class="progress-bar-wrap"><div class="progress-bar bg-emerald" style="width: 70%;"></div></div>
-                        <small class="font-mono">70% (Còn 25/36)</small>
-                      </td>
-                      <td><span class="badge-status status-online">● Đang hoạt động</span></td>
-                    </tr>
-                    <tr>
-                      <td><strong>BONBO #03</strong> · SC VivoCity Q.7</td>
-                      <td>1058 Nguyễn Văn Linh, Q.7</td>
-                      <td class="font-mono text-emerald">1.440.000 đ (72 lượt)</td>
-                      <td>
-                        <div class="progress-bar-wrap"><div class="progress-bar bg-amber" style="width: 25%;"></div></div>
-                        <small class="font-mono text-amber">25% (Sắp hết quà)</small>
-                      </td>
-                      <td><span class="badge-status status-online">● Đang hoạt động</span></td>
-                    </tr>
-                    <tr>
-                      <td><strong>BONBO #04</strong> · Chuỗi Cafe Kids Thủ Đức</td>
-                      <td>Đường số 9, TP. Thủ Đức</td>
-                      <td class="font-mono text-emerald">840.000 đ (42 lượt)</td>
-                      <td>
-                        <div class="progress-bar-wrap"><div class="progress-bar bg-emerald" style="width: 90%;"></div></div>
-                        <small class="font-mono">90% (Còn 32/36)</small>
-                      </td>
-                      <td><span class="badge-status status-online">● Đang hoạt động</span></td>
-                    </tr>
-                  </tbody>
-                </table>
+              </div>
+              <div class="mobile-item-desc">
+                <span class="mobile-badge-pill">MÀN HÌNH 01 / MOBILE APP</span>
+                <h4>Thống kê doanh thu trên điện thoại</h4>
+                <p>Theo dõi tổng thu, phân loại dòng tiền trực tuyến (VietQR) và tiền mặt theo từng điểm đặt, lọc linh hoạt theo ngày/tháng/cửa hàng.</p>
+              </div>
+            </div>
+
+            <!-- Mobile Screen 2: Chi tiết giao dịch từng giây -->
+            <div class="mobile-card-item">
+              <div class="mobile-phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <img src="assets/software-mobile-transactions.png" alt="Chi tiết giao dịch nạp tiền từng giây trên điện thoại" loading="lazy">
+                </div>
+              </div>
+              <div class="mobile-item-desc">
+                <span class="mobile-badge-pill">MÀN HÌNH 02 / REAL-TIME LOG</span>
+                <h4>Chi tiết từng giao dịch chính xác đến từng giây</h4>
+                <p>Nhật ký ghi nhận tức thì mỗi lượt khách quét mã hoặc nạp tiền mặt (10.000đ, 90.000đ...). Minh bạch 100%, kiểm soát dòng tiền tuyệt đối từ xa.</p>
               </div>
             </div>
           </div>
