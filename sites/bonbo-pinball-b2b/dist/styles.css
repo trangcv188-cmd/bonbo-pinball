@@ -1846,11 +1846,11 @@ button, input, select, textarea {
 /* TAB 2: Mobile Layout */
 .mobile-viewer-layout {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 920px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1240px;
   margin: 0 auto;
-  align-items: start;
+  align-items: stretch;
 }
 
 .mobile-card-item {
@@ -1859,8 +1859,8 @@ button, input, select, textarea {
   align-items: center;
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-radius: 28px;
-  padding: 32px 28px;
+  border-radius: 24px;
+  padding: 24px 18px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -1872,27 +1872,27 @@ button, input, select, textarea {
 }
 
 .mobile-phone-frame {
-  width: 290px;
-  max-width: 100%;
-  aspect-ratio: 9 / 18.2;
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 9 / 18.5;
   background: #0B1120;
-  border: 11px solid #1E293B;
-  border-radius: 42px;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.38), 0 0 0 2px #334155;
+  border: 9px solid #1E293B;
+  border-radius: 36px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35), 0 0 0 2px #334155;
   position: relative;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .phone-notch {
   position: absolute;
-  top: 6px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
-  width: 84px;
-  height: 18px;
+  width: 72px;
+  height: 16px;
   background: #0B1120;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 10px 10px;
   z-index: 10;
 }
 
@@ -1924,14 +1924,14 @@ button, input, select, textarea {
   color: #2563EB;
   background: #EFF6FF;
   border: 1px solid #BFDBFE;
-  padding: 4px 14px;
+  padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: 0.5px;
 }
 
 .mobile-item-desc h4 {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #0F172A;
   margin: 0 0 8px 0;
@@ -1939,13 +1939,24 @@ button, input, select, textarea {
 }
 
 .mobile-item-desc p {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: #64748B;
   line-height: 1.5;
   margin: 0;
 }
 
 /* Responsive adjustments for Section 5 */
+@media (max-width: 1100px) {
+  .mobile-viewer-layout {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+    gap: 28px;
+  }
+  .mobile-phone-frame {
+    max-width: 270px;
+  }
+}
+
 @media (max-width: 960px) {
   .laptop-viewer-layout {
     grid-template-columns: 1fr;
@@ -1981,12 +1992,13 @@ button, input, select, textarea {
   .screen-nav-item {
     flex-direction: row;
   }
+}
+
+@media (max-width: 640px) {
   .mobile-viewer-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .mobile-phone-frame {
-    width: 260px;
+    max-width: 320px;
+    gap: 24px;
   }
 }
 
