@@ -511,8 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     placeBoxes.forEach((box) => {
-      const targetSlide = parseInt(box.getAttribute('data-slide-target'), 10);
-      if (targetSlide === idx) {
+      const rawTarget = box.getAttribute('data-slide-target');
+      const targets = rawTarget ? rawTarget.split(',').map(s => parseInt(s.trim(), 10)) : [];
+      if (targets.includes(idx)) {
         box.classList.add('active');
       } else {
         box.classList.remove('active');
@@ -560,11 +561,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     placeBoxes.forEach((box) => {
       box.addEventListener('click', () => {
-        const targetSlide = parseInt(box.getAttribute('data-slide-target'), 10);
+        const rawTarget = box.getAttribute('data-slide-target');
+        const firstTarget = rawTarget ? parseInt(rawTarget.split(',')[0].trim(), 10) : 0;
         placeBoxes.forEach(b => b.classList.remove('active'));
         box.classList.add('active');
-        if (!isNaN(targetSlide)) {
-          showDeploySlide(targetSlide);
+        if (!isNaN(firstTarget)) {
+          showDeploySlide(firstTarget);
         }
         startDeployAutoPlay();
       });
