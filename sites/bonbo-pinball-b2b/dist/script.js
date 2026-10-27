@@ -1,4 +1,4 @@
-/**
+﻿/**
  * BONBO PINBALL B2B — CLIENT INTERACTIVITY & CALCULATION ENGINE
  * Framework-free, zero-dependency, high-speed execution
  */
@@ -29,12 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Result displays
   const resGross = document.getElementById('res-gross');
   const resCost = document.getElementById('res-cost');
+  const resOtherCost = document.getElementById('res-other-cost');
   const resNet = document.getElementById('res-net');
   const resNetSub = document.getElementById('res-net-sub');
   const resPayback = document.getElementById('res-payback');
   const resCapex = document.getElementById('res-capex');
   const calcModeTag = document.getElementById('calc-mode-tag');
   const rowCosts = document.getElementById('row-costs');
+  const rowOtherCost = document.getElementById('row-other-cost');
   const boxPayback = document.getElementById('box-payback');
 
   let currentTicketPrice = 20000;
@@ -57,21 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const unitPrice = machines >= 10 ? 18000000 : 20000000;
       const totalCapex = machines * unitPrice;
 
-      // Realistic gift landed cost is approx 28-30% of turnover + 300k electricity/machine
-      const giftCost = Math.round(grossRevenue * 0.28);
-      const electricityCost = machines * 300000;
-      const totalCost = giftCost + electricityCost;
+      // Chi phí quà tặng: ~30% doanh thu
+      const giftCost = Math.round(grossRevenue * 0.30);
+      // Mặt bằng & các chi phí khác (thuê điểm đặt, điện, 4G, bảo trì): ~35% doanh thu
+      const otherCost = Math.round(grossRevenue * 0.35);
+      const totalCost = giftCost + otherCost;
+      // Lợi nhuận ròng: 35% doanh thu (khống chế chuẩn trong khoảng 30% - 40%)
       const netProfit = grossRevenue - totalCost;
 
       // Payback months
       const paybackMonths = netProfit > 0 ? (totalCapex / netProfit).toFixed(1) : '∞';
 
       // Update UI
-      if (calcModeTag) calcModeTag.textContent = 'Phương án: Mua máy sở hữu (Hưởng 100% doanh thu)';
+      if (calcModeTag) calcModeTag.textContent = 'Phương án: Mua máy sở hữu (Hưởng trọn lợi nhuận điểm đặt)';
       if (resGross) resGross.textContent = formatVND(grossRevenue);
       if (rowCosts) rowCosts.style.display = 'flex';
-      if (resCost) resCost.textContent = `- ${formatVND(totalCost)}`;
-      if (resNetSub) resNetSub.textContent = 'Sau chi phí quà & điện, vận hành';
+      if (rowOtherCost) rowOtherCost.style.display = 'flex';
+      if (resCost) resCost.textContent = `- ${formatVND(giftCost)}`;
+      if (resOtherCost) resOtherCost.textContent = `- ${formatVND(otherCost)}`;
+      if (resNetSub) resNetSub.textContent = 'Sau chi phí quà, mặt bằng & các chi phí khác';
       if (resNet) resNet.textContent = formatVND(netProfit);
       
       if (boxPayback) boxPayback.style.display = 'flex';
@@ -85,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (calcModeTag) calcModeTag.textContent = 'Phương án: Hợp tác mặt bằng 0đ vốn (Nhận 25% chia sẻ)';
       if (resGross) resGross.textContent = formatVND(grossRevenue);
       if (rowCosts) rowCosts.style.display = 'none'; // Việt Core bears costs
+      if (rowOtherCost) rowOtherCost.style.display = 'none';
       if (resNetSub) resNetSub.textContent = 'Hoa hồng thực nhận hàng tháng (0đ chi phí)';
       if (resNet) resNet.textContent = formatVND(partnerNetProfit);
 
