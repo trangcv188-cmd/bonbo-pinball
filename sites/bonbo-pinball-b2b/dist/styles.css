@@ -2376,15 +2376,16 @@ textarea:focus {
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 0.72fr 1.28fr;
   box-shadow: var(--shadow-sm);
+  margin-top: 32px;
 }
 
 .gameplay-banner-img {
   background: #0F172A;
   overflow: hidden;
   position: relative;
-  min-height: 260px;
+  min-height: 480px;
 }
 
 .gameplay-banner-img img {
@@ -2395,40 +2396,99 @@ textarea:focus {
 }
 
 .gameplay-banner-content {
-  padding: 30px 32px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.gameplay-banner-content h3 {
-  font-size: 1.1875rem;
+.six-reasons-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.5vw, 1.625rem);
   font-weight: 800;
   color: var(--text-main);
-  margin: 12px 0 10px 0;
+  margin: 10px 0 18px 0;
   line-height: 1.3;
 }
 
-.gameplay-banner-content p {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-
-.banner-features {
+.six-reasons-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 
-.bf-item {
+.six-reason-card {
+  background-color: var(--bg-subtle, #F8FAFC);
+  border: 1px solid var(--border-hairline, #E2E8F0);
+  border-radius: var(--radius-md, 8px);
+  padding: 14px 16px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.six-reason-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--brand-blue, #2563EB);
+}
+
+.six-reason-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.reason-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: var(--brand-blue, #2563EB);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.six-reason-header h4 {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main, #0F172A);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.six-reason-card p {
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-main);
+  color: var(--text-muted, #475569);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.reason-sub-points {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reason-sub-points p strong {
+  color: var(--text-main, #1E293B);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .gameplay-visual-banner {
+    grid-template-columns: 1fr;
+  }
+  .six-reasons-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================================================
