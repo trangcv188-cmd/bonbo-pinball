@@ -484,4 +484,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startReasonAutoPlay();
   }
+
+  // =========================================================================
+  // 5. DEPLOYMENT LOCATIONS AUTO-SLIDER (3s interval + interactive sync)
+  // =========================================================================
+  const deploySlides = document.querySelectorAll('.deployment-slide');
+  const deployDots = document.querySelectorAll('.deploy-dot');
+  const deployPrevBtn = document.querySelector('.deployment-nav-btn.prev');
+  const deployNextBtn = document.querySelector('.deployment-nav-btn.next');
+  const placeBoxes = document.querySelectorAll('.place-box-item');
+  let currentDeployIdx = 0;
+  let deployAutoInterval = null;
+
+  function showDeploySlide(idx) {
+    if (!deploySlides.length) return;
+    if (idx < 0) idx = deploySlides.length - 1;
+    if (idx >= deploySlides.length) idx = 0;
+    currentDeployIdx = idx;
+
+    deploySlides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === idx);
+    });
+
+    deployDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
+
+    placeBoxes.forEach((box) => {
+      const targetSlide = parseInt(box.getAttribute('data-slide-target'), 10);
+      if (targetSlide === idx) {
+        box.classList.add('active');
+      } else {
+        box.classList.remove('active');
+      }
+    });
+  }
+
+  function nextDeploySlide() {
+    showDeploySlide(currentDeployIdx + 1);
+  }
+
+  function prevDeploySlide() {
+    showDeploySlide(currentDeployIdx - 1);
+  }
+
+  function startDeployAutoPlay() {
+    stopDeployAutoPlay();
+    deployAutoInterval = setInterval(nextDeploySlide, 3000);
+  }
+
+  function stopDeployAutoPlay() {
+    if (deployAutoInterval) {
+      clearInterval(deployAutoInterval);
+      deployAutoInterval = null;
+    }
+  }
+
+  if (deploySlides.length) {
+    deployNextBtn?.addEventListener('click', () => {
+      nextDeploySlide();
+      startDeployAutoPlay();
+    });
+
+    deployPrevBtn?.addEventListener('click', () => {
+      prevDeploySlide();
+      startDeployAutoPlay();
+    });
+
+    deployDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showDeploySlide(i);
+        startDeployAutoPlay();
+      });
+    });
+
+    placeBoxes.forEach((box) => {
+      box.addEventListener('click', () => {
+        const targetSlide = parseInt(box.getAttribute('data-slide-target'), 10);
+        placeBoxes.forEach(b => b.classList.remove('active'));
+        box.classList.add('active');
+        if (!isNaN(targetSlide)) {
+          showDeploySlide(targetSlide);
+        }
+        startDeployAutoPlay();
+      });
+    });
+
+    const showcaseWrap = document.querySelector('.deployment-slider-wrap');
+    if (showcaseWrap) {
+      showcaseWrap.addEventListener('mouseenter', stopDeployAutoPlay);
+      showcaseWrap.addEventListener('mouseleave', startDeployAutoPlay);
+    }
+
+    startDeployAutoPlay();
+  }
 });
