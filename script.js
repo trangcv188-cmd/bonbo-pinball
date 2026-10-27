@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (resGross) resGross.textContent = formatVND(grossRevenue);
       if (rowCosts) rowCosts.style.display = 'flex';
       if (resCost) resCost.textContent = `- ${formatVND(totalCost)}`;
-      if (resNetSub) resNetSub.textContent = 'Sau chi phí quà & điện nước vận hành';
+      if (resNetSub) resNetSub.textContent = 'Sau chi phí quà & điện, vận hành';
       if (resNet) resNet.textContent = formatVND(netProfit);
       
       if (boxPayback) boxPayback.style.display = 'flex';
@@ -402,5 +402,86 @@ document.addEventListener('DOMContentLoaded', () => {
     heroSlider.addEventListener('mouseleave', startAutoSlide);
 
     startAutoSlide();
+  }
+
+  // =========================================================================
+  // 4. 6 REASONS INTERACTIVE SLIDER (5s interval + smooth transitions)
+  // =========================================================================
+  const reasonSlides = document.querySelectorAll('.reason-slide');
+  const reasonStepBtns = document.querySelectorAll('.reason-step-btn');
+  const reasonPrevBtn = document.querySelector('.reason-nav-btn.prev');
+  const reasonNextBtn = document.querySelector('.reason-nav-btn.next');
+  const reasonCounter = document.getElementById('reason-counter');
+  let currentReasonIdx = 0;
+  let reasonAutoInterval = null;
+
+  function showReasonSlide(idx) {
+    if (!reasonSlides.length) return;
+    if (idx < 0) idx = reasonSlides.length - 1;
+    if (idx >= reasonSlides.length) idx = 0;
+    currentReasonIdx = idx;
+
+    reasonSlides.forEach((slide, i) => {
+      if (i === idx) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    reasonStepBtns.forEach((btn, i) => {
+      btn.classList.toggle('active', i === idx);
+    });
+
+    if (reasonCounter) {
+      reasonCounter.textContent = '0' + (idx + 1) + ' / 0' + reasonSlides.length;
+    }
+  }
+
+  function nextReasonSlide() {
+    showReasonSlide(currentReasonIdx + 1);
+  }
+
+  function prevReasonSlide() {
+    showReasonSlide(currentReasonIdx - 1);
+  }
+
+  function startReasonAutoPlay() {
+    stopReasonAutoPlay();
+    reasonAutoInterval = setInterval(nextReasonSlide, 5000);
+  }
+
+  function stopReasonAutoPlay() {
+    if (reasonAutoInterval) {
+      clearInterval(reasonAutoInterval);
+      reasonAutoInterval = null;
+    }
+  }
+
+  if (reasonSlides.length) {
+    reasonStepBtns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        showReasonSlide(i);
+        startReasonAutoPlay();
+      });
+    });
+
+    reasonNextBtn?.addEventListener('click', () => {
+      nextReasonSlide();
+      startReasonAutoPlay();
+    });
+
+    reasonPrevBtn?.addEventListener('click', () => {
+      prevReasonSlide();
+      startReasonAutoPlay();
+    });
+
+    const bannerEl = document.querySelector('.gameplay-visual-banner');
+    if (bannerEl) {
+      bannerEl.addEventListener('mouseenter', stopReasonAutoPlay);
+      bannerEl.addEventListener('mouseleave', startReasonAutoPlay);
+    }
+
+    startReasonAutoPlay();
   }
 });
