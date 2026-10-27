@@ -658,12 +658,19 @@
             <!-- Payback Banner -->
             <div class="payback-box" id="box-payback">
               <div class="payback-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="12" x="2" y="6" rx="2"/>
+                  <circle cx="12" cy="12" r="2"/>
+                  <path d="M6 12h.01M18 12h.01"/>
+                </svg>
               </div>
               <div class="payback-text">
-                <span>Thời gian hoàn vốn thiết bị ước tính:</span>
-                <strong class="font-mono"><span id="res-payback">1,2</span> THÁNG</strong>
-                <small>Tổng vốn đầu tư thiết bị: <span id="res-capex">60.000.000 đ</span></small>
+                <span class="payback-label">Thời gian hoàn vốn thiết bị ước tính:</span>
+                <div class="payback-value-wrap">
+                  <span class="payback-number font-mono" id="res-payback">1,2</span>
+                  <span class="payback-unit">tháng</span>
+                </div>
+                <small class="payback-capex">Tổng vốn đầu tư thiết bị: <span id="res-capex">60.000.000 đ</span></small>
               </div>
             </div>
 
