@@ -961,15 +961,15 @@
         <div class="software-tabs-bar" role="tablist" aria-label="Chọn thiết bị xem phần mềm">
           <button type="button" class="software-tab-btn active" data-tab="laptop" role="tab" aria-selected="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-            <span>Quản lý trên Laptop / Máy tính (3 màn hình)</span>
+            <span>Quản lý trên Laptop / Máy tính</span>
           </button>
           <button type="button" class="software-tab-btn" data-tab="mobile" role="tab" aria-selected="false">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            <span>Quản lý trên Điện thoại (4 màn hình)</span>
+            <span>Quản lý trên Điện thoại</span>
           </button>
         </div>
 
-        <!-- TAB 1: LAPTOP VIEW (3 MÀN HÌNH) -->
+        <!-- TAB 1: LAPTOP VIEW -->
         <div class="software-panel active" id="panel-laptop" role="tabpanel">
           <div class="laptop-viewer-layout">
             <!-- Screen Selectors & Feature Cards -->
@@ -978,7 +978,6 @@
                 <div class="screen-nav-num">01</div>
                 <div class="screen-nav-content">
                   <h4>Tổng quan doanh thu hôm nay</h4>
-                  <p>Thống kê tiền mặt, trực tuyến và xu theo thời gian thực. Lọc linh hoạt theo hôm nay, hôm qua, 7 ngày, tháng này.</p>
                 </div>
               </div>
 
@@ -986,7 +985,6 @@
                 <div class="screen-nav-num">02</div>
                 <div class="screen-nav-content">
                   <h4>Quản lý danh sách thiết bị</h4>
-                  <p>Giám sát trạng thái hoạt động online (chấm xanh), doanh thu chi tiết từng máy và từng điểm đặt.</p>
                 </div>
               </div>
 
@@ -994,7 +992,6 @@
                 <div class="screen-nav-num">03</div>
                 <div class="screen-nav-content">
                   <h4>Vận hành, Tồn kho & Đối soát</h4>
-                  <p>Kiểm soát tồn quà từng ngăn, quét đổi phiếu quà tặng và quản lý tài khoản ngân hàng nhận tiền tự động.</p>
                 </div>
               </div>
             </div>
@@ -1018,15 +1015,15 @@
                 <div class="laptop-screen-viewport">
                   <div class="laptop-slide active" data-laptop-slide="0">
                     <img src="assets/software-laptop-dashboard.png" alt="Giao diện phần mềm quản lý trên laptop - Thống kê doanh thu hôm nay" loading="lazy">
-                    <div class="screen-badge-float">Màn hình 1: Tổng doanh thu & Dòng tiền thực tế</div>
+                    <div class="screen-badge-float">Tổng doanh thu & Dòng tiền thực tế</div>
                   </div>
                   <div class="laptop-slide" data-laptop-slide="1">
                     <img src="assets/software-laptop-devices.png" alt="Giao diện phần mềm quản lý trên laptop - Giám sát thiết bị trực tuyến" loading="lazy">
-                    <div class="screen-badge-float">Màn hình 2: Trạng thái & Doanh thu từng máy</div>
+                    <div class="screen-badge-float">Trạng thái & Doanh thu từng máy</div>
                   </div>
                   <div class="laptop-slide" data-laptop-slide="2">
                     <img src="assets/software-laptop-operations.png" alt="Giao diện phần mềm quản lý trên laptop - Menu vận hành và kho quà" loading="lazy">
-                    <div class="screen-badge-float">Màn hình 3: Menu vận hành, Tồn kho quà & Đối soát</div>
+                    <div class="screen-badge-float">Menu vận hành, Tồn kho quà & Đối soát</div>
                   </div>
                 </div>
               </div>
@@ -1034,7 +1031,7 @@
           </div>
         </div>
 
-        <!-- TAB 2: MOBILE VIEW (4 MÀN HÌNH) -->
+        <!-- TAB 2: MOBILE VIEW -->
         <div class="software-panel" id="panel-mobile" role="tabpanel" hidden>
           <div class="mobile-viewer-layout">
             <!-- Mobile Screen 1: Thống kê doanh thu -->
@@ -1046,9 +1043,7 @@
                 </div>
               </div>
               <div class="mobile-item-desc">
-                <span class="mobile-badge-pill">MÀN HÌNH 01 / DOANH THU TỔNG</span>
                 <h4>Thống kê doanh thu trên điện thoại</h4>
-                <p>Theo dõi tổng thu, phân loại dòng tiền trực tuyến (VietQR) và tiền mặt theo từng điểm đặt, lọc linh hoạt theo ngày/tháng/cửa hàng.</p>
               </div>
             </div>
 
@@ -1061,9 +1056,7 @@
                 </div>
               </div>
               <div class="mobile-item-desc">
-                <span class="mobile-badge-pill">MÀN HÌNH 02 / NHẬT KÝ REAL-TIME</span>
                 <h4>Chi tiết từng giao dịch chính xác đến từng giây</h4>
-                <p>Nhật ký ghi nhận tức thì mỗi lượt khách quét mã hoặc nạp tiền mặt (10.000đ, 90.000đ...). Minh bạch 100%, kiểm soát từ xa tuyệt đối.</p>
               </div>
             </div>
 
@@ -1076,9 +1069,7 @@
                 </div>
               </div>
               <div class="mobile-item-desc">
-                <span class="mobile-badge-pill">MÀN HÌNH 03 / QUẢN LÝ THIẾT BỊ</span>
                 <h4>Giám sát trạng thái máy & kết nối</h4>
-                <p>Theo dõi trực quan 16/16 máy hoạt động trực tuyến, tín hiệu sóng 4G/Wi-Fi khỏe và phân loại theo từng cửa hàng.</p>
               </div>
             </div>
 
@@ -1091,9 +1082,7 @@
                 </div>
               </div>
               <div class="mobile-item-desc">
-                <span class="mobile-badge-pill">MÀN HÌNH 04 / BIÊN LAI ĐIỆN TỬ</span>
                 <h4>Biên lai điện tử & Chi tiết đơn hàng</h4>
-                <p>Hiển thị rõ ràng mã đơn hàng, cổng thanh toán (MOMO/VietQR), thời gian thanh toán và trạng thái nạp điểm thành công.</p>
               </div>
             </div>
           </div>

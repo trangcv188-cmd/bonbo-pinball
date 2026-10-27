@@ -1672,8 +1672,9 @@ button, input, select, textarea {
 
 .screen-nav-item {
   display: flex;
+  align-items: center;
   gap: 16px;
-  padding: 18px 20px;
+  padding: 16px 20px;
   background: #FFFFFF;
   border: 2px solid #E2E8F0;
   border-radius: 16px;
@@ -1716,10 +1717,10 @@ button, input, select, textarea {
 }
 
 .screen-nav-content h4 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #0F172A;
-  margin: 0 0 6px 0;
+  margin: 0;
   transition: color 0.25s ease;
 }
 
@@ -1934,8 +1935,8 @@ button, input, select, textarea {
   font-size: 1.05rem;
   font-weight: 700;
   color: #0F172A;
-  margin: 0 0 8px 0;
-  line-height: 1.35;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .mobile-item-desc p {
