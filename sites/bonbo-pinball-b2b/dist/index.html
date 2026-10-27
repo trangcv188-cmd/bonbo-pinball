@@ -100,9 +100,9 @@
       </a>
       
       <nav class="nav-links" id="primary-nav" aria-label="Điều hướng chính">
+        <a href="#tinh-roi">Thời gian hoàn vốn</a>
         <a href="#loi-ich">Lợi thế kinh tế</a>
         <a href="#cach-choi">Cách chơi</a>
-        <a href="#tinh-roi">Thời gian hoàn vốn</a>
         <a href="#thiet-bi">Thông số kỹ thuật</a>
         <a href="#thuc-te">Các điểm đặt thực tế</a>
         <a href="#hop-tac">Chính sách hợp tác</a>
@@ -343,6 +343,119 @@
       </div>
     </section>
 
+    <!-- SECTION 3: BỘ TÍNH TOÁN HOÀN VỐN & DOANH THU (INTERACTIVE ROI CALCULATOR) -->
+    <section class="section-container" id="tinh-roi">
+      <div class="page-width">
+        <div class="section-head">
+          <span class="section-kicker kicker-xl">CÔNG CỤ TÍNH HIỆU QUẢ TÀI CHÍNH</span>
+          <h2 class="section-title">Tính toán doanh thu & thời gian hoàn vốn</h2>
+          <p class="section-subtitle">Kéo thanh trượt để ước tính dòng tiền thực tế dựa trên quy mô điểm đặt của bạn.</p>
+        </div>
+
+        <div class="calc-wrapper">
+          <div class="calc-inputs">
+            <!-- Input 1: Số máy -->
+            <div class="calc-group">
+              <div class="calc-group-header">
+                <label for="range-machines">Số lượng máy triển khai:</label>
+                <span class="calc-live-val font-mono"><strong id="val-machines">3</strong> máy</span>
+              </div>
+              <input type="range" id="range-machines" min="1" max="20" step="1" value="3" class="calc-range">
+              <div class="range-marks">
+                <span>1 máy</span>
+                <span>5 máy</span>
+                <span>10 máy</span>
+                <span>20 máy</span>
+              </div>
+            </div>
+
+            <!-- Input 2: Lượt chơi/ngày -->
+            <div class="calc-group">
+              <div class="calc-group-header">
+                <label for="range-plays">Lượt chơi trung bình / ngày / máy:</label>
+                <span class="calc-live-val font-mono"><strong id="val-plays">40</strong> lượt</span>
+              </div>
+              <input type="range" id="range-plays" min="10" max="100" step="5" value="40" class="calc-range">
+              <div class="range-marks">
+                <span>10 lượt</span>
+                <span>40 lượt</span>
+                <span>70 lượt</span>
+                <span>100 lượt</span>
+              </div>
+            </div>
+
+            <!-- Input 3: Giá vé -->
+            <div class="calc-group">
+              <div class="calc-group-header">
+                <label>Mức giá mỗi lượt chơi:</label>
+                <span class="calc-live-val font-mono" id="val-ticket-text">20.000 đ</span>
+              </div>
+              <div class="ticket-selector">
+                <button type="button" class="ticket-btn" data-val="10000">10.000 đ</button>
+                <button type="button" class="ticket-btn active" data-val="20000">20.000 đ</button>
+                <button type="button" class="ticket-btn" data-val="30000">30.000 đ</button>
+                <button type="button" class="ticket-btn" data-val="40000">40.000 đ</button>
+                <button type="button" class="ticket-btn" data-val="50000">50.000 đ</button>
+                <button type="button" class="ticket-btn" data-val="60000">60.000 đ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Results Box -->
+          <div class="calc-results">
+            <div class="results-header">
+              <span class="font-mono">BẢNG PHÂN TÍCH TÀI CHÍNH ƯỚC TÍNH / THÁNG</span>
+            </div>
+
+            <div class="result-rows">
+              <div class="res-row">
+                <span>Tổng doanh thu dự kiến / tháng:</span>
+                <strong class="font-mono" id="res-gross">72.000.000 đ</strong>
+              </div>
+              <div class="res-row res-cost" id="row-costs">
+                <span>Chi phí quà (~28%) & điện vận hành:</span>
+                <strong class="font-mono" id="res-cost">- 21.060.000 đ</strong>
+              </div>
+              <div class="res-divider"></div>
+              <div class="res-row res-net">
+                <div>
+                  <span class="net-label">LỢI NHUẬN RÒNG / THÁNG</span>
+                  <small id="res-net-sub">Sau chi phí quà & điện, vận hành</small>
+                </div>
+                <span class="font-mono net-amount text-emerald" id="res-net">50.940.000 đ</span>
+              </div>
+            </div>
+
+            <!-- Payback Banner -->
+            <div class="payback-box" id="box-payback">
+              <div class="payback-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="12" x="2" y="6" rx="2"/>
+                  <circle cx="12" cy="12" r="2"/>
+                  <path d="M6 12h.01M18 12h.01"/>
+                </svg>
+              </div>
+              <div class="payback-text">
+                <span class="payback-label">Thời gian hoàn vốn thiết bị ước tính:</span>
+                <div class="payback-value-wrap">
+                  <span class="payback-number font-mono" id="res-payback">1,2</span>
+                  <span class="payback-unit">tháng</span>
+                </div>
+                <small class="payback-capex">Tổng vốn đầu tư thiết bị: <span id="res-capex">60.000.000 đ</span></small>
+              </div>
+            </div>
+
+            <div class="calc-actions">
+              <a href="#tu-van" class="btn btn-primary btn-block">Nhận bảng phân tích dòng tiền chi tiết</a>
+              <small class="calc-disclaimer"><em>* Ước tính dựa trên định mức chi phí quà thực tế của các điểm đã hoạt động và công suất tiêu thụ điện của máy.</em></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
     <!-- SECTION 1: LỢI THẾ KINH TẾ B2B (WHY BONBO) -->
     <section class="section-container" id="loi-ich">
       <div class="page-width">
@@ -564,119 +677,6 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-
-    <!-- SECTION 3: BỘ TÍNH TOÁN HOÀN VỐN & DOANH THU (INTERACTIVE ROI CALCULATOR) -->
-    <section class="section-container" id="tinh-roi">
-      <div class="page-width">
-        <div class="section-head">
-          <span class="section-kicker kicker-xl">CÔNG CỤ TÍNH HIỆU QUẢ TÀI CHÍNH</span>
-          <h2 class="section-title">Tính toán doanh thu & thời gian hoàn vốn</h2>
-          <p class="section-subtitle">Kéo thanh trượt để ước tính dòng tiền thực tế dựa trên quy mô điểm đặt của bạn.</p>
-        </div>
-
-        <div class="calc-wrapper">
-          <div class="calc-inputs">
-            <!-- Input 1: Số máy -->
-            <div class="calc-group">
-              <div class="calc-group-header">
-                <label for="range-machines">Số lượng máy triển khai:</label>
-                <span class="calc-live-val font-mono"><strong id="val-machines">3</strong> máy</span>
-              </div>
-              <input type="range" id="range-machines" min="1" max="20" step="1" value="3" class="calc-range">
-              <div class="range-marks">
-                <span>1 máy</span>
-                <span>5 máy</span>
-                <span>10 máy</span>
-                <span>20 máy</span>
-              </div>
-            </div>
-
-            <!-- Input 2: Lượt chơi/ngày -->
-            <div class="calc-group">
-              <div class="calc-group-header">
-                <label for="range-plays">Lượt chơi trung bình / ngày / máy:</label>
-                <span class="calc-live-val font-mono"><strong id="val-plays">40</strong> lượt</span>
-              </div>
-              <input type="range" id="range-plays" min="10" max="100" step="5" value="40" class="calc-range">
-              <div class="range-marks">
-                <span>10 lượt</span>
-                <span>40 lượt</span>
-                <span>70 lượt</span>
-                <span>100 lượt</span>
-              </div>
-            </div>
-
-            <!-- Input 3: Giá vé -->
-            <div class="calc-group">
-              <div class="calc-group-header">
-                <label>Mức giá mỗi lượt chơi:</label>
-                <span class="calc-live-val font-mono" id="val-ticket-text">20.000 đ</span>
-              </div>
-              <div class="ticket-selector">
-                <button type="button" class="ticket-btn" data-val="10000">10.000 đ</button>
-                <button type="button" class="ticket-btn active" data-val="20000">20.000 đ</button>
-                <button type="button" class="ticket-btn" data-val="30000">30.000 đ</button>
-                <button type="button" class="ticket-btn" data-val="40000">40.000 đ</button>
-                <button type="button" class="ticket-btn" data-val="50000">50.000 đ</button>
-                <button type="button" class="ticket-btn" data-val="60000">60.000 đ</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dynamic Results Box -->
-          <div class="calc-results">
-            <div class="results-header">
-              <span class="font-mono">BẢNG PHÂN TÍCH TÀI CHÍNH ƯỚC TÍNH / THÁNG</span>
-            </div>
-
-            <div class="result-rows">
-              <div class="res-row">
-                <span>Tổng doanh thu dự kiến / tháng:</span>
-                <strong class="font-mono" id="res-gross">72.000.000 đ</strong>
-              </div>
-              <div class="res-row res-cost" id="row-costs">
-                <span>Chi phí quà (~28%) & điện vận hành:</span>
-                <strong class="font-mono" id="res-cost">- 21.060.000 đ</strong>
-              </div>
-              <div class="res-divider"></div>
-              <div class="res-row res-net">
-                <div>
-                  <span class="net-label">LỢI NHUẬN RÒNG / THÁNG</span>
-                  <small id="res-net-sub">Sau chi phí quà & điện, vận hành</small>
-                </div>
-                <span class="font-mono net-amount text-emerald" id="res-net">50.940.000 đ</span>
-              </div>
-            </div>
-
-            <!-- Payback Banner -->
-            <div class="payback-box" id="box-payback">
-              <div class="payback-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="12" x="2" y="6" rx="2"/>
-                  <circle cx="12" cy="12" r="2"/>
-                  <path d="M6 12h.01M18 12h.01"/>
-                </svg>
-              </div>
-              <div class="payback-text">
-                <span class="payback-label">Thời gian hoàn vốn thiết bị ước tính:</span>
-                <div class="payback-value-wrap">
-                  <span class="payback-number font-mono" id="res-payback">1,2</span>
-                  <span class="payback-unit">tháng</span>
-                </div>
-                <small class="payback-capex">Tổng vốn đầu tư thiết bị: <span id="res-capex">60.000.000 đ</span></small>
-              </div>
-            </div>
-
-            <div class="calc-actions">
-              <a href="#tu-van" class="btn btn-primary btn-block">Nhận bảng phân tích dòng tiền chi tiết</a>
-              <small class="calc-disclaimer"><em>* Ước tính dựa trên định mức chi phí quà thực tế của các điểm đã hoạt động và công suất tiêu thụ điện của máy.</em></small>
             </div>
           </div>
         </div>
