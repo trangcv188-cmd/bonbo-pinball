@@ -3067,18 +3067,24 @@ textarea:focus {
 
 .deployment-dots {
   position: absolute;
-  bottom: 16px;
-  right: 24px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 6px;
+  gap: 8px;
   z-index: 10;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .deploy-dot {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.45);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -3087,7 +3093,7 @@ textarea:focus {
 
 .deploy-dot.active {
   width: 24px;
-  background: var(--brand-blue);
+  background: #FFFFFF;
 }
 
 /* ==========================================================================
