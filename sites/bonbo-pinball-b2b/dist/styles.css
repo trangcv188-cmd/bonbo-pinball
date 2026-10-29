@@ -44,7 +44,7 @@
 
   /* Dimensions */
   --max-width: 1200px;
-  --header-height: 72px;
+  --header-height: 76px;
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -198,11 +198,13 @@ button, input, select, textarea {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-hairline);
+  z-index: 1000;
+  background-color: #13225C;
+  background: linear-gradient(180deg, #13225C 0%, #0E1A48 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(10, 20, 60, 0.35);
   height: var(--header-height);
+  min-height: 76px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -215,14 +217,14 @@ button, input, select, textarea {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
-  gap: 12px;
+  padding: 0 24px;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
   white-space: nowrap;
   text-decoration: none;
@@ -242,63 +244,116 @@ button, input, select, textarea {
 }
 
 .brand-logo-img {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-sm);
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   display: block;
 }
 
 .brand-title {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   font-weight: 800;
-  letter-spacing: -0.01em;
-  color: var(--text-main);
+  letter-spacing: 0.3px;
+  color: #FFFFFF;
   white-space: nowrap;
   flex-shrink: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 0.85vw, 12px);
+  gap: clamp(6px, 1.1vw, 16px);
   flex: 1 1 auto;
 }
 
 .nav-links a {
-  font-size: clamp(0.725rem, 0.78vw, 0.8125rem);
+  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
   font-weight: 600;
-  color: var(--text-muted);
-  transition: color 0.15s ease, background-color 0.15s ease;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.2s ease;
   white-space: nowrap;
-  padding: 4px 5px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  opacity: 0.95;
+  letter-spacing: 0.1px;
 }
 
 .nav-links a:hover {
-  color: var(--brand-blue);
-  background-color: #F1F5F9;
+  color: #FFFFFF;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
-.header-actions .btn-sm {
-  padding: 6px 11px;
-  font-size: 0.75rem;
-  white-space: nowrap;
+/* Standout Golden-Amber CTA Pill Button (Matching user reference layout) */
+.header-cta-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #0F172A;
+  padding: 7px 18px 7px 10px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.header-cta-pill:hover {
+  background: linear-gradient(135deg, #FBBF24 0%, #D97706 100%);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.cta-pill-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #D97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cta-pill-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.cta-pill-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #78350F;
+  letter-spacing: 0.4px;
+}
+
+.cta-pill-main {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.3px;
 }
 
 .menu-toggle {
@@ -309,13 +364,23 @@ button, input, select, textarea {
   padding: 8px;
 }
 
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
 /* Top Trust Bar */
 .trust-bar {
-  background-color: #F8FAFC;
-  border-bottom: 1px solid var(--border-hairline);
+  background-color: #0B163B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 8px 0;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #94A3B8;
 }
 
 .trust-bar-inner {
@@ -331,6 +396,7 @@ button, input, select, textarea {
   align-items: center;
   gap: 6px;
   font-weight: 500;
+  color: #E2E8F0;
 }
 
 /* ==========================================================================
@@ -3158,7 +3224,7 @@ textarea:focus {
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1180px) {
   .nav-links {
     display: none; /* Mobile / Tablet collapse */
   }
@@ -3170,18 +3236,25 @@ textarea:focus {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid var(--border-hairline);
-    padding: 20px;
-    box-shadow: var(--shadow-lg);
-    gap: 12px;
-    align-items: flex-start;
+    background-color: #0E1A48;
+    border-bottom: 2px solid #2563EB;
+    padding: 16px 20px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    gap: 4px;
+    align-items: stretch;
   }
 
   .nav-links.open a {
     font-size: 0.9375rem;
-    padding: 8px 12px;
+    padding: 12px 16px;
     width: 100%;
+    color: #FFFFFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+  }
+
+  .nav-links.open a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
   }
 
   .menu-toggle {
@@ -3192,7 +3265,12 @@ textarea:focus {
 @media (max-width: 768px) {
   .site-header {
     height: auto;
-    padding: 12px 0;
+    min-height: 64px;
+    padding: 10px 0;
+  }
+
+  .site-header .header-inner {
+    padding: 0 16px;
   }
 
   .menu-toggle {
@@ -3203,10 +3281,39 @@ textarea:focus {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: var(--text-main);
+    background-color: #FFFFFF;
     margin: 4px 0;
     transition: all 0.2s ease;
   }
+}
+
+@media (max-width: 520px) {
+  .brand-title {
+    font-size: 0.9375rem;
+  }
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+  .cta-pill-sub {
+    display: none;
+  }
+  .header-cta-pill {
+    padding: 6px 12px 6px 8px;
+    gap: 6px;
+  }
+  .cta-pill-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .cta-pill-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cta-pill-main {
+    font-size: 0.8125rem;
+  }
+}
 
   .hero-metrics-strip {
     grid-template-columns: repeat(2, 1fr);
