@@ -2592,6 +2592,58 @@ textarea:focus {
 }
 
 /* ==========================================================================
+   VIDEO WATCH CTA BUTTONS (FACEBOOK REEL LINKS)
+   ========================================================================== */
+.section-video-btn-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-video-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #1877F2 0%, #0D65D9 100%);
+  color: #FFFFFF;
+  padding: 10px 24px 10px 14px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-video-watch:hover {
+  background: linear-gradient(135deg, #0D65D9 0%, #0A52B5 100%);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.45);
+  color: #FFFFFF;
+}
+
+.video-play-pulse {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #1877F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-left: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease;
+}
+
+.btn-video-watch:hover .video-play-pulse {
+  transform: scale(1.12);
+}
+
+/* ==========================================================================
    GAMEPLAY SECTION (CÁCH CHƠI)
    ========================================================================== */
 
@@ -3222,6 +3274,11 @@ textarea:focus {
   .gameplay-visual-banner {
     grid-template-columns: 1fr;
   }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 28px;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -3285,35 +3342,6 @@ textarea:focus {
     margin: 4px 0;
     transition: all 0.2s ease;
   }
-}
-
-@media (max-width: 520px) {
-  .brand-title {
-    font-size: 0.9375rem;
-  }
-  .brand-logo-img {
-    width: 36px;
-    height: 36px;
-  }
-  .cta-pill-sub {
-    display: none;
-  }
-  .header-cta-pill {
-    padding: 6px 12px 6px 8px;
-    gap: 6px;
-  }
-  .cta-pill-icon {
-    width: 28px;
-    height: 28px;
-  }
-  .cta-pill-icon svg {
-    width: 14px;
-    height: 14px;
-  }
-  .cta-pill-main {
-    font-size: 0.8125rem;
-  }
-}
 
   .hero-metrics-strip {
     grid-template-columns: repeat(2, 1fr);
@@ -3376,5 +3404,33 @@ textarea:focus {
 
   .banner-features {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-title {
+    font-size: 0.9375rem;
+  }
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+  .cta-pill-sub {
+    display: none;
+  }
+  .header-cta-pill {
+    padding: 6px 12px 6px 8px;
+    gap: 6px;
+  }
+  .cta-pill-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .cta-pill-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cta-pill-main {
+    font-size: 0.8125rem;
   }
 }
