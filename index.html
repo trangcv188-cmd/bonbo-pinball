@@ -88,7 +88,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=2.2">
+  <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body>
   <!-- Header / Nav -->
@@ -154,6 +154,80 @@
           <p class="hero-desc">
             Máy game giải trí tự động nạp tiền/quét mã VietQR và nhả quà trúng thưởng. Vận hành tự động 100%, quản lý doanh thu từ xa trên điện thoại, tối ưu không gian sinh lời 24/7.
           </p>
+
+          <!-- Interactive Investment Reasons (Tại sao bạn nên đầu tư?) -->
+          <div class="invest-reasons-block">
+            <div class="invest-reasons-header">
+              <span class="invest-kicker">Tại sao bạn nên đầu tư?</span>
+            </div>
+
+            <!-- 4 Tab Buttons -->
+            <div class="reason-tabs" role="tablist" aria-label="Lý do nên đầu tư máy bắn bi">
+              <button class="reason-tab-btn active" role="tab" aria-selected="true" data-target="reason-loi-nhuan">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Lợi nhuận cao</span>
+              </button>
+              <button class="reason-tab-btn" role="tab" aria-selected="false" data-target="reason-rui-ro">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Rủi ro thấp</span>
+              </button>
+              <button class="reason-tab-btn" role="tab" aria-selected="false" data-target="reason-dien-tich">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>Tận dụng diện tích trống</span>
+              </button>
+              <button class="reason-tab-btn" role="tab" aria-selected="false" data-target="reason-thu-hut">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Thu hút khách</span>
+              </button>
+            </div>
+
+            <!-- Content Panels -->
+            <div class="reason-panels-wrapper">
+              <!-- Panel 1: Lợi nhuận cao -->
+              <div class="reason-panel active" id="reason-loi-nhuan" role="tabpanel">
+                <div class="reason-card">
+                  <h4 class="reason-title">Lợi nhuận cao:</h4>
+                  <ul class="reason-bullet-list">
+                    <li>Biên lợi nhuận cao với chi phí mua quà thưởng thấp (chỉ bằng <strong>1/3 đến 1/5</strong> giá trị tiền nạp để trúng thưởng).</li>
+                    <li>Thị trường ít cạnh tranh, rất tiềm năng.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Panel 2: Rủi ro thấp -->
+              <div class="reason-panel" id="reason-rui-ro" role="tabpanel" hidden>
+                <div class="reason-card">
+                  <h4 class="reason-title">Rủi ro thấp:</h4>
+                  <ul class="reason-bullet-list">
+                    <li>Vốn đầu tư ban đầu nhỏ, thu hồi vốn nhanh (chỉ từ <strong>1 - 3 tháng</strong>).</li>
+                    <li>Máy bền, ít hỏng vặt, chi phí bảo trì gần như bằng không.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Panel 3: Tận dụng diện tích trống -->
+              <div class="reason-panel" id="reason-dien-tich" role="tabpanel" hidden>
+                <div class="reason-card">
+                  <h4 class="reason-title">Tận dụng diện tích trống:</h4>
+                  <ul class="reason-bullet-list">
+                    <li>Máy chỉ chiếm diện tích khiêm tốn <strong>~0.4 m²</strong> (bằng 1 viên gạch lót sàn 60x60).</li>
+                    <li>Dễ dàng tận dụng các góc chết, hành lang, gầm cầu thang, sảnh chờ để biến thành điểm sinh lời tự động 24/7.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Panel 4: Thu hút khách -->
+              <div class="reason-panel" id="reason-thu-hut" role="tabpanel" hidden>
+                <div class="reason-card">
+                  <h4 class="reason-title">Thu hút khách:</h4>
+                  <ul class="reason-bullet-list">
+                    <li>Luôn có đèn LED rực rỡ, âm thanh vui nhộn và bên trong chứa đầy quà bắt mắt.</li>
+                    <li>Dù đặt ở góc nào, máy cũng tự thu hút ánh nhìn của mọi người khi đi ngang qua.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- BẢNG BÁO GIÁ SỈ & LẺ TRỰC QUAN -->
           <div class="hero-pricing-card">
