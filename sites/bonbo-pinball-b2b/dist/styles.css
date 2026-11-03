@@ -1608,7 +1608,6 @@ button, input, select, textarea {
   font-size: 0.6875rem;
   color: var(--text-light);
   line-height: 1.4;
-}
   margin-top: 12px;
   text-align: center;
   font-style: italic;
@@ -1620,8 +1619,8 @@ button, input, select, textarea {
 
 .hardware-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -1629,15 +1628,18 @@ button, input, select, textarea {
   background-color: var(--bg-card);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-xl);
-  padding: 28px 26px;
+  padding: 24px 22px;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .specs-card-title {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   color: var(--text-main);
 }
 
@@ -1650,9 +1652,9 @@ button, input, select, textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 9px 0;
   border-bottom: 1px solid var(--border-hairline);
-  font-size: 0.875rem;
+  font-size: 0.84rem;
 }
 
 .spec-prop {
@@ -1668,8 +1670,8 @@ button, input, select, textarea {
 }
 
 .specs-dossier-download {
-  margin-top: 18px;
-  padding: 12px 16px;
+  margin-top: 16px;
+  padding: 12px 14px;
   background-color: var(--bg-subtle);
   border-radius: var(--radius-md);
   display: flex;
@@ -1692,6 +1694,7 @@ button, input, select, textarea {
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .visual-header {
@@ -1700,7 +1703,7 @@ button, input, select, textarea {
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border-hairline);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-size: 0.75rem;
   color: var(--text-light);
 }
@@ -1713,12 +1716,16 @@ button, input, select, textarea {
   background-color: #FAFAFA;
   border-radius: var(--radius-md);
   padding: 14px;
+  min-height: 340px;
 }
 
 .visual-body img {
   max-height: 380px;
+  max-width: 100%;
   width: auto;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .visual-footer {
@@ -3464,7 +3471,6 @@ textarea:focus {
   }
 
   .calc-wrapper,
-  .hardware-grid,
   .feature-grid-4,
   .steps-grid-4,
   .dash-kpi-grid,
@@ -3571,5 +3577,9 @@ textarea:focus {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+  }
+  .hardware-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
