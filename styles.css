@@ -3454,6 +3454,620 @@ textarea:focus {
 }
 
 /* ==========================================================================
+   SECTION: GIỎ QUÀ TẾT BÌNH DÂN (BONBO TET GIFTS 2026)
+   ========================================================================== */
+
+.tet-gift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+  margin-bottom: 28px;
+}
+
+.tet-gift-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tet-gift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.1);
+  border-color: #CBD5E1;
+}
+
+.tet-gift-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #F1F5F9;
+}
+
+.tet-gift-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.tet-gift-card:hover .tet-gift-media img {
+  transform: scale(1.03);
+}
+
+.gift-code-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.gift-highlight-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.badge-red {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+.badge-gold {
+  background: #D97706;
+  color: #FFFFFF;
+}
+
+.tet-gift-content {
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tet-gift-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.tet-gift-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.tet-gift-pricing-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.gift-pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.row-retail {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #CBD5E1;
+  margin-bottom: 8px;
+}
+
+.row-retail .pricing-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.row-retail .pricing-val-wrap {
+  text-align: right;
+}
+
+.row-retail .retail-num {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.row-retail .pricing-curr {
+  font-size: 0.8125rem;
+  color: #64748B;
+}
+
+.badge-short-price {
+  color: #2563EB;
+}
+
+.row-wholesale {
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.wholesale-label-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.row-wholesale .pricing-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #065F46;
+}
+
+.save-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #047857;
+  background: #D1FAE5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.save-tag-gold {
+  color: #B45309;
+  background: #FEF3C7;
+}
+
+.row-wholesale .pricing-val-wrap {
+  text-align: right;
+}
+
+.row-wholesale .wholesale-num {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #047857;
+  letter-spacing: -0.5px;
+}
+
+.row-wholesale .pricing-curr {
+  font-size: 0.8125rem;
+  color: #065F46;
+}
+
+.row-wholesale .badge-short-price {
+  color: #047857;
+}
+
+.tet-gift-cta-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-gift-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-zalo-cta {
+  background: #0068FF;
+  color: #FFFFFF;
+  padding: 10px 14px;
+  box-shadow: 0 2px 6px rgba(0, 104, 255, 0.25);
+}
+
+.btn-zalo-cta:hover {
+  background: #0053CC;
+  box-shadow: 0 4px 10px rgba(0, 104, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-call-sub {
+  background: #FFFFFF;
+  color: #1E293B;
+  border: 1px solid #CBD5E1;
+  padding: 10px 12px;
+}
+
+.btn-call-sub:hover {
+  background: #F1F5F9;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+.tet-gift-policy-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-hairline);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 10px;
+}
+
+.tet-gift-policy-banner .policy-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.tet-gift-policy-banner .policy-icon {
+  background: #F1F5F9;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tet-gift-policy-banner .policy-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tet-gift-policy-banner .policy-text strong {
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.tet-gift-policy-banner .policy-text span {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* --- Gallery & Hover Hint for Giỏ Quà May Mắn --- */
+.gift-gallery-trigger {
+  cursor: pointer;
+}
+
+.media-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 3;
+}
+
+.gift-gallery-trigger:hover .media-hover-overlay {
+  opacity: 1;
+}
+
+.overlay-hint-pill {
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transform: translateY(4px);
+  transition: transform 0.25s ease;
+}
+
+.gift-gallery-trigger:hover .overlay-hint-pill {
+  transform: translateY(0);
+}
+
+.tet-gift-thumbs-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 8px 14px;
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.gift-thumb-btn {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 2px;
+  cursor: pointer;
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gift-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.gift-thumb-btn:hover {
+  border-color: #94A3B8;
+  transform: scale(1.05);
+}
+
+.gift-thumb-btn.active {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25);
+}
+
+/* --- Thành phần giỏ quà --- */
+.tet-gift-ingredients-box {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.ingredients-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #92400E;
+  margin-bottom: 8px;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.ingredients-list li {
+  font-size: 0.8125rem;
+  color: #78350F;
+  line-height: 1.45;
+  position: relative;
+  padding-left: 14px;
+}
+
+.ingredients-list li::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+  color: #D97706;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* --- LIGHTBOX MODAL --- */
+.gift-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-container {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+  background: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-btn-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #FFFFFF;
+  font-size: 26px;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.lightbox-btn-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox-header-bar {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1E293B;
+  padding-right: 54px;
+}
+
+.lightbox-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+}
+
+.lightbox-counter {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  background: #1E293B;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.lightbox-main-view {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #020617;
+  min-height: 380px;
+  max-height: 60vh;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.lightbox-image-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-height: 58vh;
+}
+
+.lightbox-image-stage img {
+  max-width: 100%;
+  max-height: 58vh;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.lightbox-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 5;
+}
+
+.lightbox-arrow-btn:hover {
+  background: #2563EB;
+  border-color: #3B82F6;
+}
+
+.lightbox-arrow-btn.prev {
+  left: 10px;
+}
+
+.lightbox-arrow-btn.next {
+  right: 10px;
+}
+
+.lightbox-thumbs-strip {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #0F172A;
+  border-top: 1px solid #1E293B;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.lb-thumb-btn {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #334155;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.lb-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lb-thumb-btn:hover {
+  border-color: #64748B;
+}
+
+.lb-thumb-btn.active {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (BREAKPOINTS)
    ========================================================================== */
 
@@ -3461,6 +4075,22 @@ textarea:focus {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .tet-gift-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tet-gift-card:last-child {
+    grid-column: span 2;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .tet-gift-policy-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   
   .feature-grid-4,
@@ -3556,6 +4186,28 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
+  .tet-gift-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tet-gift-card:last-child {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+
+  .tet-gift-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .tet-gift-cta-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-call-sub {
+    width: 100%;
+  }
+
   .section-container {
     padding: 32px 0;
   }
