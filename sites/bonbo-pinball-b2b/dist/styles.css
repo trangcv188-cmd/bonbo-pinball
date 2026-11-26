@@ -635,6 +635,12 @@ button, input, select, textarea {
   border: 1px solid #FECACA;
 }
 
+.pricing-tag-live.tag-guarantee {
+  background-color: #ECFDF5;
+  color: #059669;
+  border-color: #A7F3D0;
+}
+
 .pricing-factory-title {
   font-family: var(--font-heading);
   font-size: 0.875rem;
